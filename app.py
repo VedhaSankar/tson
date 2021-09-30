@@ -6,7 +6,8 @@ from flask import *
 from core import convert_json_to_tson, convert_tson_to_json
 from werkzeug.utils import secure_filename
 import json
-
+import glob
+import os
 
 app = Flask(__name__)
 
@@ -49,7 +50,7 @@ def upload_files():
     if request.method == 'POST':
         f = request.files['file']
 
-        global filename
+        # global filename
 
         filename = secure_filename(f.filename)
 
@@ -65,8 +66,11 @@ def upload_files():
 '''
 @app.route('/to/tson', methods=['GET'])
 def convert_to_tson():
-    
-    path_to_json = f'static/uploads/{filename}'
+
+    list_of_files = glob.glob('static/uploads/*.json') # * means all if need specific format then *.csv
+    filename = max(list_of_files, key = os.path.getctime)
+        
+    path_to_json = f'{filename}'
 
     data = get_json(path_to_json)
 
@@ -75,24 +79,17 @@ def convert_to_tson():
 
     save_json(tson)
 
+    # return send_file(save_json(tson), as_attachment = True, attachment_filename='data.json')
+
     return send_file("static/downloads/data.json", as_attachment = True)
+    # return "success"
 
-
-'''
-    http://127.0.0.1:4000/to/json
-'''
-@app.route('/to/json', methods=['POST'])
-def convert_to_json():
-
-    tson = request.get_json()
-
-    res = convert_tson_to_json(tson)
-
-    return res
 
 def get_json(file_name):
 
     json_file = open(file_name)
+    # print (json_file)
+    # decoded_data=codecs.decode(json_file, 'utf-8-sig')
     json_data = json.load(json_file)
 
     return json_data

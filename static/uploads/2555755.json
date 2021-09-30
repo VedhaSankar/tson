@@ -1,0 +1,134 @@
+{
+  "gpcCategory": "10000232",
+  "components": [],
+  "customFields": {
+    "temporary": {
+      "signature_distributor_contact_name": "Nestle Waters North America Inc.",
+      "signature_distributor_contact_address": "Stamford, CT  06902",
+      "signature_cxc_channel_website": "deerparkwater.com",
+      "signature_cxc_channel_telephone": "1-800-288-8281"
+    },
+    "legacy": {
+      "post_consumer_statement": [{
+        "languageCodeVersion": "1",
+        "text": "Every bottle is 100% recyclable (excluding label and cap)",
+        "languageCode": "en",
+        "textHTML": "Every bottle is 100% recyclable (excluding label and cap)"
+      }],
+      "consumable": true,
+      "dual_nesting": true
+    },
+    "kraft_canada": {"sensible_solutions_flag": "No Flag"}
+  },
+  "nationalBillingFlag": true,
+  "brandNameInformation": {"brandName": "DEER PARK"},
+  "manufacturerApprovedDate": "2015-10-06",
+  "productVariantDescription": "Default upload",
+  "productName": [{
+    "languageCodeVersion": "1",
+    "text": "DEER PARK Brand 100% Natural Spring Water",
+    "languageCode": "en"
+  }],
+  "productUpdateDate": "2018-06-07T18:58:23Z",
+  "profileOnCenshareFlag": false,
+  "lastPublishDate": "10/06/2015 00:00:00",
+  "targetMarket": "840",
+  "walmartItemSetupFlag": false,
+  "legacySystem": "kwikee",
+  "assetId": 2555755,
+  "id": 1188949,
+  "assetCreationDate": "2017-05-09T15:14:29Z",
+  "packageDetails": [{
+    "packageLevel": "TRADE_ITEM",
+    "multiFacing": true,
+    "measurements": {
+      "WIDTH": [{
+        "measurementUnitCode": "INH",
+        "measurementUnitCodeVersion": "1",
+        "measurement": 6.22
+      }],
+      "HEIGHT": [{
+        "measurementUnitCode": "INH",
+        "measurementUnitCodeVersion": "1",
+        "measurement": 9.95
+      }],
+      "DEPTH": [{
+        "measurementUnitCode": "INH",
+        "measurementUnitCodeVersion": "1",
+        "measurement": 6.18
+      }]
+    }
+  }],
+  "functionalName": [{
+    "languageCodeVersion": "1",
+    "text": "Water",
+    "languageCode": "en"
+  }],
+  "gtin": "00082657500508",
+  "quantity": {"netContent": [{
+    "measurementUnitCode": "GLL",
+    "measurementUnitCodeVersion": "1",
+    "measurement": 1
+  }]},
+  "lastModifiedDate": "2018-01-29T18:28:09Z",
+  "legacyLanguageCode": "en",
+  "containerType": "PLASTIC JUG",
+  "legacyCategory": "G101",
+  "productText": [
+    {
+      "sequence": 1,
+      "languageCodeVersion": "1",
+      "text": "DEER PARK Brand 100% Natural Spring Water has been a local favorite for generations. Sourced from carefully selected springs since 1873, DEER PARK spring water contains naturally occurring minerals for a crisp, clean taste. So when you're looking for a trusted source of hydration for any occasion, choose DEER PARK.",
+      "languageCode": "en",
+      "type": "ROMANCE",
+      "textHTML": "DEER PARK Brand 100% Natural Spring Water has been a local favorite for generations. Sourced from carefully selected springs since 1873, DEER PARK spring water contains naturally occurring minerals for a crisp, clean taste. So when you're looking for a trusted source of hydration for any occasion, choose DEER PARK."
+    },
+    {
+      "sequence": 1,
+      "languageCodeVersion": "1",
+      "text": "Lightweight 1-gallon plastic jug: place in refrigerator and drink by the glass",
+      "languageCode": "en",
+      "type": "WHY_BUY",
+      "textHTML": "Lightweight 1-gallon plastic jug: place in refrigerator and drink by the glass"
+    }
+  ],
+  "version": "Default",
+  "brandAsset": {
+    "brandName": "DEER PARK",
+    "brandId": 2388137,
+    "parentManufacturerAsset": {
+      "manufacturerName": "BLUETRITON BRANDS INC.",
+      "manufacturerId": 11735431
+    }
+  },
+  "nutrition": [{
+    "nutritionKey": 1,
+    "childFlag": false,
+    "labelType": "ADULT",
+    "preparationStateCode": "PREPARED"
+  }],
+  "publishedFlag": true,
+  "legacyLanguageCodeVersion": "1",
+  "customProductName": [{
+    "languageCodeVersion": "1",
+    "text": "DEER PARK Brand 100% Natural Spring Water, 1-gallon plastic jug",
+    "languageCode": "en"
+  }],
+  "categorySpecific": {"claimStatements": {"ingredientClaim": [
+    {
+      "languageCodeVersion": "1",
+      "index": 1,
+      "text": "100% natural spring water: zero calories, no sweeteners and no artificial colors or flavors",
+      "languageCode": "en"
+    },
+    {
+      "languageCodeVersion": "1",
+      "index": 2,
+      "text": "Contains naturally balanced minerals for a crisp, clean taste",
+      "languageCode": "en"
+    }
+  ]}},
+  "needsQcFlag": true,
+  "kwiktrakBrandId": 474427,
+  "claimsEndorsements": {"nutritionalClaim": ["FREE_FROM_GLUTEN"]}
+}
