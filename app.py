@@ -64,11 +64,18 @@ def upload_files():
 '''
     http://127.0.0.1:4000/to/tson
 '''
-@app.route('/to/tson', methods=['GET'])
+@app.route('/to/tson', methods = ['GET'])
 def convert_to_tson():
+
+
+    print("here")
 
     list_of_files = glob.glob('static/uploads/*.json') # * means all if need specific format then *.csv
     filename = max(list_of_files, key = os.path.getctime)
+
+    print (filename)
+
+    print ("hello wtf")
         
     path_to_json = f'{filename}'
 
