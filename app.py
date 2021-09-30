@@ -24,33 +24,12 @@ def home():
  
     return render_template('demo.html')
 
-
-# @app.route('/', methods=['POST'])
-# def upload_files():
-
-#     uploaded_file = request.files['file']
-
-#     filename = secure_filename(uploaded_file.filename)
-
-#     if filename != '':
-
-#         file_ext = os.path.splitext(filename)[1]
-
-#         uploaded_file.save(os.path.join('static/uploads', filename))
-
-
-#     return '', 204
-
-
-
-
 @app.route('/', methods = ['GET', 'POST'])
 def upload_files():
 
     if request.method == 'POST':
-        f = request.files['file']
 
-        # global filename
+        f = request.files['file']
 
         filename = secure_filename(f.filename)
 
@@ -58,8 +37,9 @@ def upload_files():
 
         file = open(app.config['UPLOAD_FOLDER'] + filename)
 
-    return render_template('demo.html')
+        update_json(filename)
 
+    return render_template('demo.html')
 
 '''
     http://127.0.0.1:4000/to/tson
@@ -67,48 +47,48 @@ def upload_files():
 @app.route('/to/tson', methods = ['GET'])
 def convert_to_tson():
 
+    file_name = get_latest_file_name()
 
-    print("here")
-
-    list_of_files = glob.glob('static/uploads/*.json') # * means all if need specific format then *.csv
-    filename = max(list_of_files, key = os.path.getctime)
-
-    print (filename)
-
-    print ("hello wtf")
-        
-    path_to_json = f'{filename}'
+    path_to_json = f'{UPLOAD_PATH}{file_name}'
 
     data = get_json(path_to_json)
-
 
     res, tson = convert_json_to_tson(data)
 
     save_json(tson)
 
-    # return send_file(save_json(tson), as_attachment = True, attachment_filename='data.json')
-
-    return send_file("static/downloads/data.json", as_attachment = True)
-    # return "success"
-
+    return tson
 
 def get_json(file_name):
 
     json_file = open(file_name)
-    # print (json_file)
-    # decoded_data=codecs.decode(json_file, 'utf-8-sig')
     json_data = json.load(json_file)
 
     return json_data
-
 
 def save_json(data):
 
     with open('static/downloads/data.json', 'w') as f:
         json.dump(data, f)
 
+def update_json(file_name):
 
+    data = {
+        "file_name" : file_name
+    }
+
+    with open('static/temp.json', 'w') as f:
+        json.dump(data, f)
+
+def get_latest_file_name():
+
+    json_file = open('static/temp.json')
+    json_data = json.load(json_file)
+
+    file_name = json_data['file_name']
+
+    return file_name
 
 if __name__ == '__main__':
-    #app.debug = True;1
-    app.run('127.0.0.1', 4000, True)
+
+    app.run('0.0.0.0', 4000, True)
