@@ -57,7 +57,9 @@ def convert_to_tson():
 
     save_json(tson)
 
-    return tson
+    # return tson
+
+    return send_file("static/downloads/data.json", as_attachment = True, cache_timeout = 0)
 
 def get_json(file_name):
 
